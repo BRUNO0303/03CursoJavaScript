@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+    <style>
+        .azul{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1Titulo">Titulo h1 antes del cambio</h1>
+    <p id="pParrafo">Parrafo antes del cambio</p>
+    <p id="pParrafo2" class="azul">Segundo parrafo</p>
+    <form id="formulario">
+        Nombre: <input type="text" name="nombre" value="Juan">
+        <br>
+        Apellido: <input type="text" name="apellido" value="Perez">
+        <br>
+    </form>
+    <button onclick='mostrarValores()'>Mostrar</button>
+    <div id="valores"></div>
+    <script>
+        let titulo = document.getElementById('h1Titulo');
+        console.log(`Valor h1: ${titulo.innerHTML}`);
+        let parrafo = document.getElementById('pParrafo');
+        console.log(`Valor p: ${parrafo.innerHTML}`);
+        //titulo.innerHTML = "Titulo h1 despues del cambio";
+        //parrafo.innerHTML = "Parrafo despues del cambio";
+        let parrafo2 = document.getElementsByTagName(`p`);
+        console.log(`No. parrafos de tag: ${parrafo2.length}`);
+        for(let i = 0; i<parrafo2.length; i++){
+            console.log(`El parrafo ${i} dice: ${parrafo2[i].innerHTML}`);
+        }
+        let parrafo3 = document.getElementsByClassName(`azul`);
+        console.log(`No. parrafos de clase: ${parrafo3.length}`);
+        for(let i = 0; i<parrafo3.length; i++){
+            console.log(`El parrafo ${i} dice: ${parrafo3[i].innerHTML}`);
+        }
+        let parrafo4 = document.querySelectorAll(`p.azul`);
+        console.log(`No. parrafos de selector con azul: ${parrafo4.length}`);
+        for(let i = 0; i<parrafo4.length; i++){
+            console.log(`El parrafo ${i} dice: ${parrafo4[i].innerHTML}`);
+        }
+        function mostrarValores(){
+            let formulario = document.forms[`formulario`];
+            let texto = '';
+            let nombre = formulario[`nombre`];
+            let apellido = formulario[`apellido`];
+            texto = nombre.value + `<br>` + apellido.value;
+            console.log(texto);
+            document.getElementById("valores").innerHTML = texto;
+        }
+    </script>
+</body>
+</html>

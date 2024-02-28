@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo DOM</title>
+</head>
+<body onload="entrar()">
+    <h1 onclick="cambiarTexto(this)" 
+    onmouseover="cambioColorPasando(this)"
+    onmouseout="cambioColorQuitando(this)">Manejo DOM con JS</h1>
+    <button onclick="mostrar()">Mostrar</button>
+    <br>
+    <div id="mensajeCookies"></div>
+    <div id="mostrarBoton"></div>
+    <div>
+        Nombre: <input type="text" id="nombre" onchange="convertir(this)" value="">
+    </div>
+    <script>
+        cambiarTexto = (titulo) => {
+            console.log(titulo);
+            titulo.innerHTML = "Cambiar el titulo";
+        }
+        entrar = () => {
+            alert(`Entrando a la pagina web`);
+            let texto = ``;
+            if(navigator.cookieEnabled){
+                texto = "Cookies habilitadas"
+            }else{
+                texto = "Cookies inhabilitadas"
+            }
+            document.getElementById("mensajeCookies").innerHTML = texto;
+        }
+        mostrar = () => {
+            document.getElementById("mostrarBoton").innerHTML = "Metodo mostrar"
+        }
+        convertir = (valorInput) => {
+            valorInput.value = valorInput.value.toUpperCase();
+        }
+        cambioColorPasando = (titulo) => {
+            titulo.style.color = "red"
+        }
+        cambioColorQuitando = (titulo) => {
+            titulo.style.color = "black"
+        }
+    </script>
+</body>
+</html>

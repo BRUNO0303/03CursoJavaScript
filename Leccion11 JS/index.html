@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Manejo DOM en JS</title>
+</head>
+<body>
+    <h1 id="titulo">Manejo DOM con JS</h1>
+    <button onclick="mostrar()">Mostrar</button>
+    <br>
+    <img src="http://globalmentoring.com.mx/imagenes/javascript.png" id="imagenJs">
+    <script>
+        mostrar = () => {
+            document.getElementById("imagenJs").src = "http://globalmentoring.com.mx/imagenes/html5.png"
+        }
+    </script>
+</body>
+</html>

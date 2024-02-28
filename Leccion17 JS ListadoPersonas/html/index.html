@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saludos Responsivos</title>
+  <link rel="stylesheet" href="/Leccion17 JS ListadoPersonas/css/styles.css">
+</head>
+<body onload="mostrarPersonas()">
+  <!--
+      <img src="/Leccion17 JS ListadoPersonas/css/montaña.jpg" class="fondo">
+  -->
+  <!--Titulo-->
+  <div class="contenedor" id="cabecero">
+    <h1>Listado de Personas</h1>
+  </div>
+  <!--Lista de personas-->
+  <div class="contenedor">
+    <div class="elemento">
+      <ul id="personas"></ul>
+    </div>
+  </div>
+  <!--Boton-->
+  <div class="contenedor">
+    <div class="disenioBoton">
+      <button onclick="agregarPersona()">Agregar Persona</button>
+      <button onclick="quitarPersona()">Quitar Persona</button>
+    </div>
+
+    <form id="forma" class="formulario">
+      <input type="text" id="nombre" placeholder="Nombre">
+      <input type="text" id="apellido" placeholder="Appellido">
+    </form>
+  </div>
+  <script src="/Leccion17 JS ListadoPersonas/js/persona.js"></script>
+  <script src="/Leccion17 JS ListadoPersonas/js/app.js"></script>
+</body>
+</html>
+
+
+
+
